@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlokDesignDev</title>
+    
+    <!-- <link rel="icon" type="Project_1st_elements/ico" href="favIcon.ico"> -->
+    <link rel="icon" type="image/PNG" href="./Project_1st_elements/favIcon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <Style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .mystyle {
+            justify-content: space-between;
+        }
+
+        #Animation_ball {
+            width: 50px;
+            height: 50px;
+            background-color: #a70199;
+            animation-name: Div4AnimationBGOnly;
+            animation-duration: 10s;
+            /* animation-iteration-count: 10; */
+            animation-iteration-count: infinite;
+            position: relative;
+        }
+
+        @keyframes
+
+        /*identifierName (Main)*/
+        Div4AnimationBGOnly {
+            0%
+
+            /*from*/
+                {
+                Left: 0Px;
+                Top: 0px;
+            }
+
+            25% {
+                Left: 85vw;
+                Top: 0px;
+                border-radius: 50%;
+
+            }
+
+            50% {
+                Top: 90vh;
+                Left: 85vw;
+
+            }
+
+            75% {
+                Left: 0Px;
+                Top: 90vh;
+                background-color: hsl(258, 70%, 13%);
+                border-radius: 50%;
+            }
+
+            100%
+
+            /*To*/
+                {
+                Left: 0px;
+                Top: 0px;
+            }
+        }
+
+
+        .footer2 {
+    /* background-color: hsl(89, 34%, 12%); */
+    background-color: #0E273C;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* margin: 2rem 0 0 0; */
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 66% 34%;
+}
+
+.footerDevided {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+
+    border-bottom: 1px solid #eeeeee3d;
+}
+
+.logoSection {
+    color: #f860c5;
+    font-size: 40px;
+    font-weight: 800;
+
+    border-left: 1px solid #eeeeee3d;;
+}
+
+
+/* .socialSection > a:not(:nth-child(2) ) {
+    color: #eee;
+} */
+
+.socialSection {
+    margin-left: 15px;
+}
+
+.svgSize {
+    height: 32px;
+    display: inline-block;
+}
+
+.socialSection > a:not(:last-child) {
+    margin-right: 15px;
+}
+
+.svgSize:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 .8rem rgba(255, 255, 255, 0.815);
+}
+
+.svgSize:active {
+    transform: translateY(-3px);
+}
+
+.follow {
+    margin-bottom: 20px;
+    color: #f4f4f4;
+}
+
+.copywriteSection > p {
+    color: #b6b6b6;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.copywriteSection > p > .brandName {
+    color: #eee;
+}
+
+.about, .experience, .projects, .contact {
+    background-image: linear-gradient(hsl(0, 0%, 100%), #f860c5);
+    background-size: 0 3px;
+    padding-bottom: 0.6rem;
+    border-radius: 4%;
+    
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease;
+
+    margin-bottom: 13px;
+
+}
+
+.about:hover, .experience:hover, .projects:hover, .contact:hover {
+    /* border-bottom: 3px solid #f860c5; */
+    background-size: 100% 1px;
+    border-radius: 4%;
+
+    padding-bottom: 0.6rem;
+    /* color: hsl(89, 80%, 55%); */
+    color: #26547C;
+    
+}
+
+
+.Upwork:hover, .Fiverr:hover, .Freelancer:hover,
+.Guru:hover, .d99design:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+    cursor: pointer;
+}
+
+    .video-section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      margin-bottom: 15px;
+    }
+
+    .video-container video {
+    padding-left: 5.9%;
+    padding-right: 5.9%;
+    
+    width: 100%;
+    height: auto;
+
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+
+    }
+
+    .parents {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        /* background-color: #a70199; */
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+    }
+
+    .div1 {
+    
+        grid-area: 1/1/2/2;
+        align-items: center;
+        filter: blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    .div1:hover {
+        filter: blur(0px);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+    }
+
+    .div2 {
+        grid-area: 1/2/2/3;
+        filter: blur(5px);
+        transition: filter 0.3s ease;
+      
+    }
+
+    .div3 {
+        grid-area: 2/1/3/2;
+        filter: blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    .div4 {
+        grid-area: 2/2/3/3;
+        filter: blur(5px);
+        transition: filter 0.3s ease;
+    }
+
+    .div2:hover {
+        filter: blur(0px);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+
+    }
+
+    .div3:hover {
+        filter: blur(0px);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+
+    }
+       
+    .div4:hover {
+        filter: blur(0px);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+
+    }
+
+
+    </Style>
+
+</head>
+
+<body style="background-color: #DEF6CA; scroll-behavior: smooth;">
+
+
+    <!-- start_Header_section     -->
+
+    <Header>
+        <div id="Header" class="w-[100%] md:h-[110px] gap-[2.5%] bg-red-400 flex justify-between gap-[8px] md:flex-wrap md:justify-center md:items-center">
+
+            <div id="Animation_ball">
+                <img style="height: 50px; width: 50px;" src="./Project_1st_elements/Alok_Sarkar_Ai_Image_2-01.png"
+                    alt="">
+                <h1 style="font-size: larger; font-weight: bold; color: #565656;">ALOK_SARKAR</h1>
+            </div>
+
+            <div class="w-[30%] h-[85px] bg-red-400 rounded-lg flex justify-center items-center">
+                <div
+                    class="w-[30%] h-[85px] bg-red-400 bg-opacity-25 rounded-lg flex justify-center items-center fixed mt-9">
+                    <a href="#Header">
+                        <div id="lottie" style="width: 200px; height: auto;"></div>
+    
+                        <!-- Link of script- https://cdnjs.com/libraries/lottie-web -->
+    
+    
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+                        <script>
+                            var animation = bodymovin.loadAnimation({
+                                container: document.getElementById('lottie'),
+                                renderer: 'svg',
+                                loop: true,
+                                autoplay: true,
+                                path: './Project_1st_elements/data.json'
+                            })
+                        </script>
+                    </a>
+                </div>
+            </div>
+            <ul
+            id="menubar" class="mystyle bg-[#95ff45] p-2 md:bg-red-400 md:p-0 hidden mt-[25px] md:w-[62.5%] md:h-[85px] md:bg-red-400 md:rounded-lg md:flex md:flex-wrap md:justify-center md:items-center md:space-x-[30px] md:gap-[5px]">
+                <li
+                    class="about text-[24px] text-black">
+                    <a href="#About"> About </a>
+                </li>
+                <li
+                    class="experience text-[24px] text-black">
+                    <a href="#Experience"> Experience </a>
+                </li>
+                <li
+                    class="projects text-[24px] text-black">
+                    <a href="#Projects">
+                        <blockquote
+                            cite="tangerine-hummingbird-1479b6.netlify.app/?fbclid=IwAR0ZcG7CNN2TuzlNenN6hZ24CezVjzv2b86KKEXCDB9i6H543Pn9UHQ7RgM">
+                            Projects
+                        </blockquote>
+                    </a>
+                </li>
+                <li
+                    class="contact text-[24px] text-black">
+                    <a href="#Contact">Contact</a>
+                </li>
+            </ul>
+
+            <div  id="humberger" class="off block flex-col mr-[8px] mt-[25px] md:hidden" style="height: auto; width: 30px;">
+
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 20">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: none;
+                          stroke: #95ff45;
+                          stroke-miterlimit: 10;
+                          stroke-width: 2px;
+                        }
+                      </style>
+                    </defs>
+                    <line class="cls-1" x1=".5" y1="1" x2="32.5" y2="1"/>
+                    <line class="cls-1" x1=".5" y1="10" x2="32.5" y2="10"/>
+                    <line class="cls-1" x1=".5" y1="19" x2="32.5" y2="19"/>
+                  </svg>
+            
+            </div>
+
+        </div>
+    </Header>
+
+    <!-- end_Header_section     -->
+
+    <!-- <br> -->
+    <div class="h-[5px]"></div>
+
+    <!-- start_Lottie_section     -->
+     
+     <div id="Alok_Github_Lottie_Profile">
+
+        <h1 class="text-[#345fff] text-2xl font-bold text-center">Welcome to Landing Page Portfolio Website</h1>
+
+        <h1 class="text-[#35605A] font-bold text-center">Alok Responsive : <span class="text-[#00120B]">Lottie Animation</span> -Example</h1>
+
+        <div id="lottie2" style="width:auto; height: auto;"></div>
+
+        <!-- Link of script- https://cdnjs.com/libraries/lottie-web -->
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+        <script>
+            var animation = bodymovin.loadAnimation({
+                container: document.getElementById('lottie2'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: './Project_1st_elements/Alok_Design_Store_Correction.json'
+            })
+        </script>
+
+    </div>
+
+    <!-- End_Lottie_section     -->        
+
+    <!-- start_Hero_section     -->
+
+    <!-- Start About Section -->
+
+    <section id="About" class="ml-[5%] mr-auto">
+            <div class="m-2 p-2">
+                <h1 class="text-left text-4xl font-bold">About Me</h1>
+            </div>
+    </section>
+
+    <Section class="Hero_Section bg-white flex flex-wrap justify-center items-center">
+        
+        <div id="Hero_Section_go"
+            class="w-[75%] h-auto bg-[white] flex flex-wrap justify-center items-center gap-[6%]">
+            <!-- mt-[20px] -->
+            <div>
+                <blockquote cite="https://tangerine-hummingbird-1479b6.netlify.app/assets/profile-pic.png">
+                    <img class="w-[auto] lg:h-[400px] md:h-[(400px)*auto]" src="./Project_1st_elements/Retouch_Alok passport 1.6x2in.png" alt="">
+                </blockquote>
+
+            </div>
+
+            <div class="flex:flex-wrap justify-center items-center gap-">
+                <h1 class="text-[#565656] text-2xl text-bold text-center"> Hello, I'm </h1>
+                <h1 class="text-[#232323] text-5xl font-bold text-center p-2"> Alok Sarkar </h1>
+                <h1 class="text-[#AA5042] lg:text-2xl md:text-1ml text-bold text-center p-2 m-2"> 
+Graphics Designer + Video Editing & Motion Graphics Animation + Illustration + UI/UX Designer + HTML & CSS Expert. <span><h1>❤</h1></span> </h1>
+
+            </div>
+        </div>
+    </Section>
+
+    <!-- End About Section -->
+
+    <!-- end_Hero_section     -->
+
+
+
+<!-- start_Experience_section -->    
+
+    <section id="Experience" class="gap-2">
+
+                <div class="bg-white w-[auto] h-[20%] flex flex-wrap justify-center items-center gap-[6%]">
+
+            <div>
+                <h1 class="text-center bg-[#FFD166] pt-2">Explore My</h1>
+                <h1 class="text-center text-4xl font-bold bg-[#FFD166] p-4">Experience</h1>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="bg-white w-[100%] h-[auto] flex flex-wrap justify-center items-center">
+
+        
+
+        <div class="w-[75%] h-[80%] bg-[white] flex flex-wrap flex-row justify-center items-center gap-[1%]">
+            <div class="w-[37%] h-[100%] mb-auto mt-9 pt-2 bg-white flex justify-center items-center">
+
+                <blockquote cite="https://tangerine-hummingbird-1479b6.netlify.app/assets/about-pic.png">
+                    <img class="rounded-[30px] " src="./Project_1st_elements/Alok_Sarkar_Ai_Image_2-01.png" alt="">
+                    
+                    <h6 class="text-center text-[#053C5E] pt-2">Illustration Image</h6>
+                    
+                </blockquote>
+
+
+            </div>
+
+
+            <div class="w-[62%] h-[100%] bg-white flex flex-wrap flex-col justify-center items-center gap-[1%] mb-[10%]">
+
+                    <button class="w-[40%] h-[auto] rounded-[30px] mt-[10%] pb-2">
+
+                        <div class="flex justify-center"><img class="w-[35px] h-[35px]"
+                                src="./Project_1st_elements/experience.png" alt=""> 
+                        <div>
+
+                        <div>
+                            <h1 class="text-2xl font-bold">Experience</h1>
+                        </div>                        
+
+                    </button>
+
+                <!-- <div class="w-[100%] h-[45%] bg-white flex flex-wrap justify-center gap-[5.5%]">
+
+                </div> -->
+
+
+                <div class="w-[100%] h-[45%] bg-white flex justify-center items-center">
+                    <p class="ml-[8%] p-2 m-2"><span class="text-[#35605A]">Graphics Designer + Video Editing & Motion Graphics  Animation + Illustration + UI/UX Designer + HTML & CSS Expert.</span>
+                    Magazine, Newsletter, Catalog, Business Card, PDF eBook, Illustration, Logo Design & Animation, <span class="text-[#06D6A0]">Lottie Animation, Custom Animation, Lower Third Animation,</span> Video Editing, UI/UX Design, Website & App Design, Using HTML & CSS responsive Website Design.
+
+                    <span class="font-bold">InDesign, Adobe Premiere Pro, After Effects, Media Encoder, Adobe Animate, Adobe Illustrator, Photoshop, Visual Studio Code</span> Specialist.
+                    <span class="text-[#1B9AAA]">
+                        So why Late! Let's get started for an Order Now...
+                        Thank you. Have a nice day.!
+                    </span>
+                </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- End_Experience_section -->
+
+
+<!-- Start Contact Me Section -->
+
+    <section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
+
+        <h1 class="text-2xl font-black mb-4"> Contact Me on</h1>
+
+        <ul class="font-bold"> 
+            <li class="text-2xl bg-[#14A306] text-white p-2 Upwork">Upwork</li>
+            <li class="text-2xl bg-[#1DBF73] text-white p-2 Fiverr">Fiverr</li>
+            <li class="text-2xl bg-[#29B2FE] text-white p-2 Freelancer">Freelancer.com</li>
+            <li class="text-2xl bg-[#2777C6] text-white p-2 Guru">Guru.com</li>
+            <li class="text-2xl bg-red-400 text-white p-2 d99design">99design</li>
+        </ul>
+
+    </section>
+
+    <!-- End Contact Me Section -->
+
+
+<!-- Start All Projects Section -->
+
+<section id="Projects" class="ml-[5%] mr-auto">
+
+            <div class="m-2 p-2">
+                <h1 class="text-left text-4xl font-bold">Projects</h1>
+            </div>
+
+</section>
+
+    <!-- Start Video Section -->
+
+    <section class="projects_section pl-[6%] pr-[6%] mt-14 mb-4">
+    <h1 class="font-bold text-slate-500 text-3xl text-center bg-[#0E273C] p-4">Watch My Logo Animations</h1>
+    </section>
+
+    <section class="video-section">
+        
+        <div class="video-container">
+            <video autoplay loop muted controls>
+            <source src="./Project_1st_elements/AlokDesignDevVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+<!-- End Video Section -->
+
+
+<!-- start Grid Images Section -->
+
+<section class="pl-[6%] pr-[6%] mt-4 mb-8">
+    <h1 class="font-bold text-slate-500 text-3xl text-center bg-[#0E273C] p-4">Here is my Portfolio Work's Expamples </h1>
+</section>
+
+<section class="w-vw h-auto pl-[6%] pr-[6%]">
+
+    <div class="parents ">
+
+        <div class="div1"> <img src="./Project_1st_elements/Business_Cards_Game_Cards_Forms_Buttons_Creation.jpg" alt="Business_Cards_Game_Cards_Forms_Buttons_Creation"> </div>
+        <div class="div2"> <img src="./Project_1st_elements/Complete-Branding-identity-Stationery_Design.jpg" alt="Complete-Branding-identity-Stationery_Design"> </div>
+        <div class="div3"> <img src="./Project_1st_elements/Magazine_Catalog_Newsletter_Forms_Design_Official_Graphic_Designer_PDF_Book_2.jpg" alt="Magazine_Catalog_Newsletter_Forms_Design_Official_Graphic_Designer_PDF_Book_2"> </div>
+        <div class="div4"> <img src="./Project_1st_elements/Magazine_Catalog_Newsletter_Forms_Design_Official_Graphic_Designer_PDF_Book.jpg" alt="Magazine_Catalog_Newsletter_Forms_Design_Official_Graphic_Designer_PDF_Book"> </div>
+
+    </div>
+
+</section>
+
+<!-- End Grid Images Section -->
+
+<!-- End All Projects Section -->
+
+
+    <!-- start_Footer_section -->
+
+    <Footer class="footer2 mt-12">
+
+ <div class="footerDevided">
+        
+        <div class="socialSection">
+
+           <div class="follow">
+                <h6>Follow On <span class="text-[#565656]">(demo)</span></h6>
+            </div>
+
+           <div class="social">
+             
+                <a href="" target="_blank"><img src="./Project_1st_elements/facebook.svg" alt="Facebook" class="svgSize"></a>
+                    
+                <a href="" target="_blank"><img src="./Project_1st_elements/X_Twitter.svg" alt="X Twitter" class="svgSize"></a>
+                    
+                <a href="" target="_blank"><img src="./Project_1st_elements/Linkedin.svg" alt="Linkedin" class="svgSize"></a>
+                    
+                <a href="" target="_blank"><img src="./Project_1st_elements/Behance.svg" alt="Behance" class="svgSize"></a>
+           
+           </div>
+        </div>
+        
+        <div class="logoSection">
+            Alok
+       </div>
+
+    </div>
+
+    <section class="ml-auto mr-auto">
+              <div>
+                        <ul
+                            class="w-[62.5%] h-[85px] flex justify-items-center items-center space-x-[30px] gap-[5px] pt-2 pb-4 ">
+                            <li
+                    class="about text-[24px] text-black">
+                    <a href="#About"> About </a>
+                </li>
+                <li
+                    class="experience text-[24px] text-black">
+                    <a href="#Experience"> Experience </a>
+                </li>
+                <li
+                    class="projects text-[24px] text-black">
+                    <a href="#Projects">
+                        <blockquote
+                            cite="tangerine-hummingbird-1479b6.netlify.app/?fbclid=IwAR0ZcG7CNN2TuzlNenN6hZ24CezVjzv2b86KKEXCDB9i6H543Pn9UHQ7RgM">
+                            Projects
+                        </blockquote>
+                    </a>
+                </li>
+                <li
+                    class="contact text-[24px] text-black">
+                    <a href="#Contact">Contact</a>
+                </li>
+                        </ul>
+            </div>
+    </section>
+
+
+  </section>
+
+
+    </Footer>
+
+    <footer class="footer2">
+
+        <section>
+            
+            <div class="copywriteSection ">
+                <p>Copywrite &copy; <span class="yearControl">2030</span> by <span class="brandName">AlokDesignDev</span>. All rights reserved.</p>
+            </div>
+            
+        </section>
+
+  </footer>
+
+    <!-- end_Footer_section -->
+
+
+<!-- ///////////// Footer Year change Auto- Start ////////// -->
+     <script>
+
+
+
+const yearControl = document.querySelector(".yearControl");
+const currentYear = new Date().getFullYear();
+yearControl.textContent = currentYear;
+
+     </script>
+
+<!-- ///////////// Footer Year change Auto- End ////////// -->
+
+<!-- index_3_js for humbargar dropdown manu -->
+    <script src="./Project_1st_elements/index_3.js"></script>
+
+</body>
+
+</html>
