@@ -450,9 +450,10 @@
 
      <!-- Start Lottie - 4 -->
 
-    <div id="Alok_Github_Lottie_Profile">
+   <!-- 
+        <div id="Alok_Github_Lottie_Profile">
 
-        <h1 class="text-[#345fff] text-2xl font-bold text-center">Lottie - 5.2 Check</h1>
+       <h1 class="text-[#345fff] text-2xl font-bold text-center">Lottie - 5.2 Check</h1>
 
         <h1 class="text-[#35605A] font-bold text-center">Alok Responsive : <span class="text-[#00120B]">Lottie - 5.2 Check Animation</span> -Example</h1>
 
@@ -460,7 +461,7 @@
 
         <!-- Link of script- https://cdnjs.com/libraries/lottie-web -->
 
-
+   <!-- 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 
         <script>
@@ -472,6 +473,31 @@
                 path: './Project_1st_elements/Lottie_5.2.json'
             })
         </script>
+
+-->
+
+<div id="Alok_Github_Lottie_Profile">
+        
+<h1 class="text-[#345fff] text-2xl font-bold text-center">Lottie - 5.2 Check</h1>
+    
+<div id="animContainer" style="height: 800px; width: 740px;"></div>
+
+<!-- https://cdnjs.com/libraries/lottie-web -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<!-- <script src="./script.js"></script> -->
+
+<script>
+
+let animation = bodymovin.loadAnimation({
+    container: document.getElementById('animContainer'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './Project_1st_elements/Lottie_5.2.json'
+})
+
+</script>
 
     </div>
 
