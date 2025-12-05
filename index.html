@@ -263,6 +263,94 @@
 
     }
 
+/* MarketPlace 5-star section Start */
+    
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Rating button */
+.rating-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background: #008cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-btn:hover {
+  background: #006dcc25;
+}
+
+/* Collapse icon rotation */
+#icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Collapsible section animation */
+.rating-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 2s ease;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+
+}
+
+.scrollbox {
+  height: auto;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  transition: max-height 2s ease;
+}
+
+
+
+/* Cards */
+.card {
+  width: 260px;
+  /* height: auto; */
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stars {
+  font-size: 28px;
+  color: gold;
+}
+
+.comment {
+  margin-top: 10px;
+  color: #333;
+}
+
+/* MarketPlace 5-star section End */
+
+/* Cards for All Courses */
+.card_for_Courses {
+  width: 85%;
+  height: auto;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
     </Style>
 
@@ -568,19 +656,397 @@ Graphics Designer + Video Editing & Motion Graphics Animation + Illustration + U
 
     <section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
 
-        <h1 class="text-2xl font-black mb-4"> Contact Me on</h1>
+        <h1 class="text-2xl font-black mb-4 p-4 bg-[#f4f4f4]"> Show Ratings & Contact Me on</h1>
 
         <ul class="font-bold"> 
-            <li class="text-2xl bg-[#14A306] text-white p-2 Upwork">Upwork</li>
-            <li class="text-2xl bg-[#1DBF73] text-white p-2 Fiverr">Fiverr</li>
-            <li class="text-2xl bg-[#29B2FE] text-white p-2 Freelancer">Freelancer.com</li>
-            <li class="text-2xl bg-[#2777C6] text-white p-2 Guru">Guru.com</li>
-            <li class="text-2xl bg-red-400 text-white p-2 d99design">99designs</li>
+            <li class="text-2xl bg-[#14A306] text-white p-2 Upwork"> 
+                <span>
+                <!-- Rating button with collapsible icon -->
+                    <button id="ratingBtn" class="rating-btn bg-[#14A306]">
+                    Upwork <span id="icon"> ▼ </span>
+                    </button>
+                </span> 
+            </li>
+
+<!-- For all btn click once set JS at a time need start -->
+
+            <!-- id="ratingBtn" → class="ratingBtn"
+
+            id="ratingSection" → class="ratingSection"
+
+            id="icon" → class="icon" -->
+
+<!-- For all btn click once set JS at a time need end -->
+
+<!-- Hidden rating container -->
+<div id="ratingSection" class="rating-section">
+
+  <!-- Rakesh Dhiman -->
+  <div class="card">
+    <h2>Rakesh Dhiman</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Alok is very talented and cooperative. I really like his work done for me. I would like to use him again in future projects."</p>
+  </div>
+
+  <!-- Kieran Stowers -->
+  <div class="card">
+    <h2>Kieran Stowers</h2>
+    <div class="stars">★★★★☆</div>
+    <p class="comment">"Fantastic communication and speed of work — thank you Alok!"</p>
+  </div>
+
+    <!-- Rakesh Kumar -->
+  <div class="card">
+    <h2>Rakesh Kumar</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Thanks for your Good work, Keep up the good work!"</p>
+  </div>
+
+</div>
+
+<!-- <script src="script.js"></script> -->
+
+            <li class="text-2xl bg-[#1DBF73] text-white p-2 Fiverr">
+                <span>
+
+                    <!-- Rating button with collapsible icon -->
+                    <button id="FiverrratingBtn" class="rating-btn bg-[#1DBF73]">
+                    Fiverr <span id="Fiverricon"> ▼ </span>
+                    </button>
+
+                </span>
+            </li>
+
+
+<!-- Hidden rating container -->
+<div id="FiverrratingSection" class="rating-section">
+
+  <!-- maxsiskin -->
+  <div class="card">
+    <h2>Maxsiskin</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Fantastic and very quick and responsive."</p>
+  </div>
+
+  <!-- destinyhg -->
+  <div class="card">
+    <h2>Destinyhg</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Seller was very patient until I got the look I was looking for"</p>
+  </div>
+
+    <!-- chriodee -->
+  <div class="card">
+    <h2>Chriodee</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Excellent work! Great customer service and delivery time."</p>
+  </div>
+
+  <!-- itteb17 -->
+  <div class="card">
+    <h2>Itteb17</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Great Artist! Great Job done! Excellent communication and it was a smooth transaction. I highly recommend him,and definitely, will be using his skills again for other jobs. Thank you very much!"</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+            <li class="text-2xl bg-[#29B2FE] text-white p-2 Freelancer">
+                
+            <span>
+
+                    <!-- Rating button with collapsible icon -->
+                    <button id="FreelancerComratingBtn" class="rating-btn bg-[#29B2FE]">
+                    Freelancer.com <span id="FreelancerComicon"> ▼ </span>
+                    </button>
+
+                </span>
+            </li>
+
+
+
+<!-- Hidden rating container -->
+<div id="FreelancerComratingSection" class="rating-section">
+
+  <!-- Advith -->
+  <div class="card">
+    <h2>Advith</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Great support. Super reliable. High quality of work."</p>
+  </div>
+
+  <!-- Rosalyn Ray -->
+  <div class="card">
+    <h2>Rosalyn Ray</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Alok is always helpful, prompt and produces quality work. I really appreciate how much he tries to make sure that the customer is satisfied. I've used him before and will use him again whenever i have a need."</p>
+  </div>
+
+    <!-- Sam -->
+  <div class="card">
+    <h2>Sam</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"It was good working with Alok, did great work!"</p>
+  </div>
+
+   <!-- Anuj -->
+  <div class="card">
+    <h2>Anuj</h2>
+    <div class="stars">★★★★★</div>
+    <p class="comment">"Alok is amazing at his work. Definitely will hire him for more projects."</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+            <li class="text-2xl bg-[#2777C6] text-white p-2 Guru">
+                
+            <span>
+
+                    <!-- Rating button with collapsible icon -->
+                    <button id="GururatingBtn" class="rating-btn bg-[#2777C6]">
+                    Guru.com <span id="Guruicon"> ▼ </span>
+                    </button>
+
+                </span>
+            </li>
+
+
+<!-- Hidden rating container -->
+<div id="GururatingSection" class="rating-section">
+
+  <!-- Rakesh Dhiman -->
+  <div class="card">
+    <h2>Will Be</h2>
+    <div class="stars">★★★★★</div>
+    <!-- <p class="comment">"Alok is very talented and cooperative. I really like his work done for me. I would like to use him again in future projects."</p> -->
+  </div>
+
+  
+
+</div>
+
+<script src="script.js"></script>
+
+            <li class="text-2xl bg-red-400 text-white p-2 d99design">
+                
+                 <span>
+
+                    <!-- Rating button with collapsible icon -->
+                    <button id="designs99ratingBtn" class="rating-btn bg-red-400">
+                    99designs.com <span id="designs99icon"> ▼ </span>
+                    </button>
+
+                </span>
+            </li>
+
+
+<!-- Hidden rating container -->
+<div id="designs99ratingSection" class="rating-section">
+
+   <!-- Rakesh Dhiman -->
+  <div class="card">
+    <h2>Will Be</h2>
+    <div class="stars">★★★★★</div>
+    <!-- <p class="comment">"Alok is very talented and cooperative. I really like his work done for me. I would like to use him again in future projects."</p> -->
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
         </ul>
 
     </section>
 
     <!-- End Contact Me Section -->
+
+    <!-- Start All Courses & Certifications Section -->
+
+
+<section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
+
+        <h1 class="text-2xl font-black mb-4 p-4 bg-[#f4f4f4]"> Show My All Courses & Certifications </h1>
+
+        <ul class="font-bold"> 
+            <li class="text-2xl bg-[#14A306] text-white p-2 Upwork"> 
+                <span>
+                <!-- Rating button with collapsible icon -->
+                    <button id="allCoursesratingBtn" class="rating-btn bg-[#14A306]">
+                    All Courses & Certifications <span id="allCoursesicon"> ▼ </span>
+                    </button>
+                </span> 
+            </li>
+
+
+<!-- Hidden rating container -->
+<div id="allCoursesratingSection" class="rating-section scrollbox">
+
+<!-- Graphics Design ( from LEDP -ICT Division ) -->
+  <div class="card_for_Coursesd">
+    <div class="stars">✅</div>
+    <h2><h1 class="bg-red-400 bg-opacity-25 m-2">ICT Division</h1>Graphics Design professional</h2>
+    <a class="bg-red-400 bg-opacity-25 p-2" href="http://ledp.ictd.gov.bd/certificate/?regid=6734">Cirtificate</a>
+    </div>
+
+    <!-- Domestika Course - Pablo Cuello -->
+  <div class="card_for_Courses">
+    <div class="stars">✅</div>
+    <h2><h1 class="bg-red-400 bg-opacity-25 m-2">Domestika Course</h1>Vectorial Animation Frame by Frame Style with After Effects - Pablo Cuello</h2>
+    <a class="bg-red-400 bg-opacity-25 p-2" href="https://www.domestika.org/en/courses/684-vectorial-animation-frame-by-frame-style-with-after-effects">Cirtificate</a>
+    </div>
+
+     <!-- Full-Stack Web Development -->
+  <div class="card_for_Courses">
+    <div class="stars">✅</div>
+    <h2><h1 class="bg-red-400 bg-opacity-25 m-2">Udemy Course</h1>Build a Portfolio website using HTML5 & CSS3 (The Complete Full-Stack Web Development Bootcamp)</h2>
+    <a class="bg-red-400 bg-opacity-25 p-2" href="https://www.udemy.com/certificate/UC-66407152-fb8c-4cf1-914c-9a0db9c796bd/">Cirtificate</a>
+    </div>
+
+        <!-- e-laeltd - 2025 -->
+  <div class="card_for_Courses">
+    <div class="stars">✅</div>
+    <h2><h1 class="bg-red-400 bg-opacity-25 m-2">e-laeltd :</h1> Design & Marketing Basic Course -2025</h2>
+  </div>
+
+    <!-- Others Courses -->
+  <div class="card_for_Courses">
+    <div class="stars">✅</div>
+    <div>
+        <h1 class="bg-red-400 bg-opacity-25 m-2">Fiverr Learn</h1> 
+        <span><h3>1. Daniel Walter Scott : Build a responsive website using HTML5 & CSS3 -  2024</h3></span>
+        <span><h3>2. Mark Sposato : Logo Design Fundamentals - 2022</h3></span>
+        <span><h3>3. Oliver Randorff : How to Bring Your Text to Life in After Effects - 2022</h3></span>
+    </div>
+  </div>
+
+    
+
+</div>
+
+<script src="script.js"></script>
+
+
+        </ul>
+
+</section>
+
+    <!-- End All Courses & Certifications Section -->
+
+
+
+    <!-- Start Design process and Methods Section -->
+
+
+<section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
+
+        <h1 class="text-2xl font-black mb-4 p-4 bg-[#f4f4f4]"> Work style : Design process and Methods </h1>
+
+        <ul class="font-bold"> 
+            <li class="text-2xl bg-[#A020F0] text-white p-2 Upwork"> 
+                <span>
+                <!-- Rating button with collapsible icon -->
+                    <button id="DesignprocessratingBtn" class="rating-btn bg-[#A020F0] bg-opacity-10">
+                    Show my Design process and Methods <span id="Designprocessicon"> ▼ </span>
+                    </button>
+                </span> 
+            </li>
+
+
+<!-- Hidden rating container -->
+<div id="DesignprocessratingSection" class="rating-section scrollbox">
+
+    <!-- Others Courses -->
+  <div class="card_for_Courses">
+    <div>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-1st Thinking about the Design & Animation,</h3></span>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-2nd Ruf sketch or not,</h3></span>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-3rd start some illustration,</h3></span>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-4th start 2D Aanimation,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-5th Checking by Preview,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-6th save the Ae File,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-7th Output GIF Animation,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-8th Collect Ae Source file & other all Files,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-9th send it for checking the Client,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-10th Revision by the Client,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-11th Finally Deliver to the Client when Satisfied,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-12th Complete the Project by giving Feedback.</h3>
+
+        <h2 class="bg-red-400 bg-opacity-25 p-2 mt-2 mb-2" >Thank You.❤️</h2>
+
+
+    </div>
+  </div>
+
+    
+
+</div>
+
+<script src="script.js"></script>
+
+
+        </ul>
+
+</section>
+
+    <!-- End Design process and Methods Section -->
+
+
+        <!-- Start  Why me for your Project Section -->
+
+
+<section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
+
+        <h1 class="text-2xl font-black mb-4 p-4 bg-[#f4f4f4]"> <span class="bg-red-400 bg-opacity-25 p-[5px] pr-[-5px] mt-[5px] mb-[5px]"> Why me ?</span>  for your Project. </h1>
+
+        <ul class="font-bold"> 
+            <li class="text-2xl bg-[#14A306] text-white p-2 Upwork"> 
+                <span>
+                <!-- Rating button with collapsible icon -->
+                    <button id="WhymeratingBtn" class="rating-btn bg-[#14A306]">
+                    Why me ? <span id="Whymeicon"> ▼ </span>
+                    </button>
+                </span> 
+            </li>
+
+
+<!-- Hidden rating container -->
+<div id="WhymeratingSection" class="rating-section scrollbox">
+
+    <!-- Others Courses -->
+  <div class="card_for_Courses">
+    <div>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Print Media Specialist,</h3></span>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Strong Knowledge in Adobe Illustrator, </h3></span>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Lottie Animation Expert, </h3></span>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-2D After Effects Motion Graphics Design Specialist, </h3></span>
+        <span><h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-PDF Handaler, </h3></span>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Maintenance 300 DPI & CMYK document, </h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Perfect Illustration,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Client satisfaction makes,</h3>
+        <h3 class="bg-red-400 bg-opacity-25 p-[5px] mt-[5px] mb-[5px]" >-Print Ready PDF, PNG, & AI source file provided.</h3>
+
+        <h2 class="bg-green-600 bg-opacity-45 p-2 mt-2 mb-2" > So why Late. Let's Get Started. Thank You.❤️</h2>
+
+
+    </div>
+  </div>
+
+    
+
+</div>
+
+<script src="script.js"></script>
+
+
+        </ul>
+
+</section>
+
+    <!-- End Why me for your Project Section -->
 
 
 <!-- Start All Projects Section -->
@@ -767,6 +1233,271 @@ yearControl.textContent = currentYear;
 
 <!-- index_3_js for humbargar dropdown manu -->
     <script src="./Project_1st_elements/index_3.js"></script>
+
+
+
+
+    <!-- Upwork MarketPlace 5-star JS section Start -->
+
+            <script>
+
+            const ratingBtn = document.getElementById("ratingBtn");
+            const ratingSection = document.getElementById("ratingSection");
+            const icon = document.getElementById("icon");
+
+            let isOpen = false;
+
+            ratingBtn.addEventListener("click", () => {
+            if (!isOpen) {
+                ratingSection.style.maxHeight = "500px"; // expand
+                icon.style.transform = "rotate(180deg)"; // ▼ to ▲
+            } else {
+                ratingSection.style.maxHeight = "0"; // collapse
+                icon.style.transform = "rotate(0deg)";
+            }
+
+            isOpen = !isOpen;
+            });
+
+
+            </script>
+
+
+    <!-- Upwork MarketPlace 5-star JS section End -->
+
+
+
+    <!-- Fiverr MarketPlace 5-star JS section Start -->
+
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const FiverrratingBtn = document.getElementById("FiverrratingBtn");
+                    const FiverrratingSection = document.getElementById("FiverrratingSection");
+                    const Fiverricon = document.getElementById("Fiverricon");
+
+                    let isOpen = false;
+
+                    FiverrratingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            FiverrratingSection.style.maxHeight = "500px"; // expand
+                            Fiverricon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            FiverrratingSection.style.maxHeight = "0"; // collapse
+                            Fiverricon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- Fiverr MarketPlace 5-star JS section End -->
+
+
+    <!-- Freelancer.com MarketPlace 5-star JS section Start -->
+
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const FreelancerComatingBtn = document.getElementById("FreelancerComratingBtn");
+                    const FreelancerComratingSection = document.getElementById("FreelancerComratingSection");
+                    const FreelancerComicon = document.getElementById("FreelancerComicon");
+
+                    let isOpen = false;
+
+                    FreelancerComratingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            FreelancerComratingSection.style.maxHeight = "500px"; // expand
+                            FreelancerComicon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            FreelancerComratingSection.style.maxHeight = "0"; // collapse
+                            FreelancerComicon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- Freelancer.com MarketPlace 5-star JS section End -->
+
+
+
+     <!-- Guru MarketPlace 5-star JS section Start -->
+
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const GuruatingBtn = document.getElementById("GururatingBtn");
+                    const GururatingSection = document.getElementById("GururatingSection");
+                    const Guruicon = document.getElementById("Guruicon");
+
+                    let isOpen = false;
+
+                    GururatingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            GururatingSection.style.maxHeight = "500px"; // expand
+                            Guruicon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            GururatingSection.style.maxHeight = "0"; // collapse
+                            Guruicon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- Guru MarketPlace 5-star JS section End -->
+
+
+    <!-- 99designs MarketPlace 5-star JS section Start -->
+
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const designs99atingBtn = document.getElementById("designs99ratingBtn");
+                    const designs99ratingSection = document.getElementById("designs99ratingSection");
+                    const designs99icon = document.getElementById("designs99icon");
+
+                    let isOpen = false;
+
+                    designs99ratingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            designs99ratingSection.style.maxHeight = "500px"; // expand
+                            designs99icon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            designs99ratingSection.style.maxHeight = "0"; // collapse
+                            designs99icon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- 99designs MarketPlace 5-star JS section End -->
+
+
+
+<!-- All Courses & Certifications JS section Start -->
+
+             <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const allCoursesatingBtn = document.getElementById("allCoursesratingBtn");
+                    const allCoursesratingSection = document.getElementById("allCoursesratingSection");
+                    const allCoursesicon = document.getElementById("allCoursesicon");
+
+                    let isOpen = false;
+
+                    allCoursesratingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            allCoursesratingSection.style.maxHeight = "500px"; // expand
+                            allCoursesicon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            allCoursesratingSection.style.maxHeight = "0"; // collapse
+                            allCoursesicon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- All Courses & Certifications JS section End -->
+
+
+    <!-- All Design Process JS section Start -->
+
+             <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const DesignprocessatingBtn = document.getElementById("DesignprocessratingBtn");
+                    const DesignprocessratingSection = document.getElementById("DesignprocessratingSection");
+                    const Designprocessicon = document.getElementById("Designprocessicon");
+
+                    let isOpen = false;
+
+                    DesignprocessratingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            DesignprocessratingSection.style.maxHeight = "500px"; // expand
+                            Designprocessicon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            DesignprocessratingSection.style.maxHeight = "0"; // collapse
+                            Designprocessicon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- All Design Process JS section End -->
+
+
+    <!-- All  Why Me ? JS section Start -->
+
+             <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const WhymeatingBtn = document.getElementById("WhymeratingBtn");
+                    const WhymeratingSection = document.getElementById("WhymeratingSection");
+                    const Whymeicon = document.getElementById("Whymeicon");
+
+                    let isOpen = false;
+
+                    WhymeratingBtn.addEventListener("click", () => {
+                        if (!isOpen) {
+                            WhymeratingSection.style.maxHeight = "500px"; // expand
+                            Whymeicon.style.transform = "rotate(180deg)"; // ▼ to ▲
+                        } else {
+                            WhymeratingSection.style.maxHeight = "0"; // collapse
+                            Whymeicon.style.transform = "rotate(0deg)";
+                        }
+                        isOpen = !isOpen;
+                    });
+                });
+
+
+            </script>
+
+
+    <!-- All Why Me ? JS section End -->
+
+
+
+        <!-- MarketPlace 5-star JS with class usege section Start -->
+
+    <!-- <li class="text-2xl bg-[#14A306] text-white p-2 Upwork"> 
+    <button class="ratingBtn bg-[#14A306]">
+        Upwork <span class="icon">▼</span>
+    </button>
+</li>
+
+<div class="ratingSection">
+    <div class="card">
+        <h2>Rakesh Dhiman</h2>
+        <div class="stars">★★★★★</div>
+        <p class="comment">"Alok is very talented..."</p>
+    </div>
+</div> -->
+
+    <!-- MarketPlace 5-star JS with class usege section End -->
+
 
 </body>
 
