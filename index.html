@@ -353,6 +353,60 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* FAQ Style Section */
+
+
+.faq-container {
+  width: 600px;
+  max-width: 90%;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  background: #f7f7f7;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #eee;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-answer p {
+  padding: 0 15px 15px;
+  margin: 0;
+}
+
     </Style>
 
 </head>
@@ -996,7 +1050,7 @@ Graphics Designer + Video Editing & Motion Graphics Animation + Illustration + U
     <!-- End Design process and Methods Section -->
 
 
-        <!-- Start  Why me for your Project Section -->
+    <!-- Start  Why me for your Project Section -->
 
 
 <section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
@@ -1048,6 +1102,122 @@ Graphics Designer + Video Editing & Motion Graphics Animation + Illustration + U
 </section>
 
     <!-- End Why me for your Project Section -->
+
+
+    <!-- Start FAQ Section -->
+
+
+<section id="Contact" class="gap-2 pr-[6%] pl-[6%] pt-4 pb-4 mb-4 ml-auto mr-auto text-center">
+
+
+        <h1 class="text-2xl font-black text-[#FF69B4] mb-4 p-4 bg-[#f4f4f4]"> <span> FAQ Section </h1>
+
+        <ul class="font-bold"> 
+            <li class="text-2xl bg-[#FF69B4] text-white p-2 Upwork"> 
+                <span>
+                <!-- collapsible icon -->
+                    <button class="rating-btn bg-[#FF69B4]">
+                    FAQ <span> ▼ </span> Below
+                    </button>
+                </span> 
+            </li>
+
+
+
+            <script src="script.js"></script>
+
+
+        </ul>
+
+
+        
+<div class="faq-container">
+
+  <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">What kind of Software are Use for Task ?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">To create a Complete Logo Animation, I used Adobe Illustrator & Adobe After Effects, Media Encoder, and Visual Studio Code.</p>
+    </div>
+  </div>
+
+    <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">What kind of⚡files I can Get ?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">You get- Animated GIF, Transparent MOV, MP4, Lottie.JSON ( Lottie will be included in the Visual Studio Code file using HTML, CSS, JS. So that your developer can add the logo on your website & App. ), HTML & CSS for Website and [ Illustrator (PNG, JPG, PDF, EPS, & AI) & After Effects source files.]  </p>
+    </div>
+  </div>
+
+<div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">I do not have any static logo, Can you help me by ✅Design a Static logo?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">Yes, I will. For that, I need - 1. Logo Name 2. Tagline (if you have) 3. Color 4. Logo Type 5. Samples 6. Need Information about your Company, Products & short details of the Logo (please write in detail in text).</p>
+    </div>
+  </div>
+
+<div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">Lottie_Supported Futures =></button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">Lottie Animation does not support all Types of Animation. It has some Limitations. That is why I apply No effects, only custom path and necessary keyframe animation. So that the logo will support all platforms.</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">For a ✅Portfolio Website & ✅Illustration what asset are needs?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">A Portfolio Website Needs Text Content, Doc Files, Images, and Videos. And for Illustration, Need to submit your Art or Image, or Logo, or character, etc.</p>
+    </div>
+  </div>
+
+
+   <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">What a⚡Portfolio Website Look like !</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">To see what Actual looks like as a Portfolio Website- visit My Website- https://is.gd/NYqj8E</p>
+    </div>
+  </div>
+
+
+   <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">What Information are Requirements for Illustration/Animation/Website?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">The Specific Requirements are found on the GiG's 'Requirements' section, followed by the Illustration / 2D Animation / Portfolio Website Category. Need to input all the files & Texts. </p>
+    </div>
+  </div>
+
+
+  <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">Illustration / 2D Animation / Website Category I need only 1 to work, what I submit?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">If you need 1 category of work from the 3 Requirements (Illustration / 2D Animation / Portfolio Website Category), Scape the other 2 Requirements by submitting the same files & texts fill-up.</p>
+    </div>
+  </div>
+
+
+    <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">How to Find the⚡Requirements section?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">From the GiG's Basic/Standard/Premium section & 'Continue' with which package you need & then you can find the 'Requirements' Section.</p>
+    </div>
+  </div>
+
+
+    <div class="faq-item">
+    <button class="faq-question bg-green-600 bg-opacity-45 p-2 mt-2 mb-2">I need something ✅different from your Package, what can I do?</button>
+    <div class="faq-answer">
+      <p class="scrollbox bg-pink-300">You can feel free to contact me through the Fiverr conversation section. I will get back to you I can ASAP. Or, if you tell me your Active Hours accordingly to your country, then I will contact you. I always respect & prioritize ur Budget. No hesitate to discuss with me ur Budget Range. Thank You.💖</p>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+</section>
+
+    <!-- End FAQ Section -->
 
 
 <!-- Start All Projects Section -->
@@ -1478,6 +1648,33 @@ yearControl.textContent = currentYear;
 
 
     <!-- All Why Me ? JS section End -->
+
+
+
+    <!-- Start FAQ JS Section -->
+
+<script>
+
+ const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(q => {
+  q.addEventListener("click", () => {
+    q.classList.toggle("active");
+
+    const answer = q.nextElementSibling;
+
+    if (q.classList.contains("active")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  });
+});
+
+
+</script>
+
+    <!-- End FAQ JS Section -->
 
 
 
