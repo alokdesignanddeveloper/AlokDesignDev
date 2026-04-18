@@ -429,33 +429,32 @@ let count = 0;
 const maxPlays = 2;
 let started = false;
 
-// unified play function
 function startAudio() {
   if (started) return;
 
-  audio.play().then(() => {
-    started = true;
-  }).catch(err => {
-    console.log("Playback blocked:", err);
-  });
+  audio.play()
+    .then(() => {
+      started = true;
+    })
+    .catch(err => {
+      console.log("Playback blocked:", err);
+    });
 }
 
-// Play on first scroll
-window.addEventListener("scroll", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
+// Better scroll detection (only triggers after real scrolling)
+function handleScroll() {
+  if (window.scrollY > 50) {   // user actually scrolled
+    startAudio();
+    window.removeEventListener("scroll", handleScroll);
   }
-});
+}
 
+window.addEventListener("scroll", handleScroll);
 
-// Play on first click anywhere
+// Click always works better than scroll on mobile
 window.addEventListener("click", startAudio, { once: true });
 
-// Loop max 2 times
+// Loop max 3 times
 audio.addEventListener("ended", () => {
   count++;
   if (count < maxPlays) {
