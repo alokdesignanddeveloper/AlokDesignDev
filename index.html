@@ -417,7 +417,8 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
-    
+ <div>
+
 <audio id="audio">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
@@ -426,20 +427,26 @@ body {
 const audio = document.getElementById("audio");
 let count = 0;
 const maxPlays = 2;
-let hasPlayed = false;
+let started = false;
+
+// unified play function
+function startAudio() {
+  if (started) return;
+
+  audio.play().then(() => {
+    started = true;
+  }).catch(err => {
+    console.log("Playback blocked:", err);
+  });
+}
 
 // Play on first scroll
-window.addEventListener("scroll", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
-});
+window.addEventListener("scroll", startAudio, { once: true });
 
-// Loop max 3 times
+// Play on first click anywhere
+window.addEventListener("click", startAudio, { once: true });
+
+// Loop max 2 times
 audio.addEventListener("ended", () => {
   count++;
   if (count < maxPlays) {
@@ -449,6 +456,8 @@ audio.addEventListener("ended", () => {
 });
 </script>
 
+
+</div>
 
          <!-- Audio_section End    -->
 
