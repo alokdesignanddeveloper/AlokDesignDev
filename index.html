@@ -416,36 +416,30 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
+        
 
-<audio id="audio" autoplay >
-    <source src='./Project_1st_elements/AlokDesignStore_Intro_Video.MP3' type="audio/mpeg">
+<button onclick="playAudio()">Play Sound</button>
+
+<audio id="audio">
+  <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
-
 <script>
-  const audio = document.getElementById("audio");
-  let count = 0;
-  const maxPlays = 3;
+const audio = document.getElementById("audio");
+let count = 0;
+const maxPlays = 3;
 
-window.addEventListener("load", () => {
-  audio.muted = false; // unmute if needed
-  audio.play().catch(() => {
-    console.log("Autoplay blocked");
-  });
+function playAudio() {
+  audio.play();
+}
+
+audio.addEventListener("ended", () => {
+  count++;
+  if (count < maxPlays) {
+    audio.currentTime = 0;
+    audio.play();
+  }
 });
-        
-
-
-  audio.addEventListener("ended", () => {
-    count++;
-
-    if (count < maxPlays) {
-      audio.currentTime = 0; // rewind
-      audio.play();
-    }
-  });
-
-        
 </script>
 
          <!-- Audio_section End    -->
