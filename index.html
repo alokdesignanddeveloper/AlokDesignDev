@@ -418,47 +418,45 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
 
+    
 <audio id="audio">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
 <script>
 const audio = document.getElementById("audio");
-
-let started = false;
-let playCount = 0;
+let count = 0;
 const maxPlays = 3;
+let hasPlayed = false;
 
-// 🔥 Unified start function
-function startAudio() {
-  if (started) return;
-
-  audio.play()
-    .then(() => {
-      started = true;
-      console.log("Audio started");
-    })
-    .catch(err => {
-      console.log("Playback blocked:", err);
-    });
-}
-
-// 👇 First interaction triggers audio
-window.addEventListener("click", startAudio, { once: true });
-window.addEventListener("touchstart", startAudio, { once: true });
-
+// Play on first scroll
 window.addEventListener("scroll", () => {
-  startAudio();
-}, { once: true });
+  if (!hasPlayed) {
+    audio.play().then(() => {
+      hasPlayed = true;
+    }).catch(() => {
+      console.log("Playback blocked");
+    });
+  }
+});
 
-// 🔁 Loop audio max 3 times
+// Loop max 3 times
 audio.addEventListener("ended", () => {
-  playCount++;
-
-  if (playCount < maxPlays) {
+  count++;
+  if (count < maxPlays) {
     audio.currentTime = 0;
-    audio.play().catch(err => {
-      console.log("Replay blocked:", err);
+    audio.play();
+  }
+});
+</script>
+
+<script>
+document.addEventListener("click", () => {
+  if (!hasPlayed) {
+    audio.play().then(() => {
+      hasPlayed = true;
+    }).catch(() => {
+      console.log("Playback blocked");
     });
   }
 });
