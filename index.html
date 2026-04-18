@@ -417,7 +417,6 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
-
     
 <audio id="audio">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
@@ -426,7 +425,7 @@ body {
 <script>
 const audio = document.getElementById("audio");
 let count = 0;
-const maxPlays = 3;
+const maxPlays = 2;
 let hasPlayed = false;
 
 // Play on first scroll
@@ -440,7 +439,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Loop max 3 times
+// Loop max 2 times
 audio.addEventListener("ended", () => {
   count++;
   if (count < maxPlays) {
@@ -450,6 +449,11 @@ audio.addEventListener("ended", () => {
 });
 </script>
 
+</body>
+</html>
+
+// Play on first Click
+      
 <script>
 document.addEventListener("click", () => {
   if (!hasPlayed) {
