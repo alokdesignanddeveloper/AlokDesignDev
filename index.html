@@ -419,6 +419,54 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
 
+<div>
+
+  <!-- Audio Element -->
+  <audio id="myAudio" preload="auto">
+    <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById("myAudio");
+
+    let count = 0;
+    const maxPlays = 2;
+
+    // Play audio on first user click (only once)
+    document.addEventListener("click", () => {
+      audio.volume = 0; // start silent for smooth fade
+      audio.play().then(() => {
+        
+        // 🎧 Fade-in effect
+        let vol = 0;
+        const fade = setInterval(() => {
+          if (vol < 1) {
+            vol += 0.1;
+            audio.volume = vol;
+          } else {
+            clearInterval(fade);
+          }
+        }, 100);
+
+      }).catch(() => {
+        console.log("Playback blocked");
+      });
+    }, { once: true });
+
+    // 🔁 Loop max 2 times
+    audio.addEventListener("ended", () => {
+      count++;
+      if (count < maxPlays) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    });
+
+  </script>
+
+</div>
+
+
     
 <audio id="audio" autoplay unmuted >
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
@@ -451,42 +499,7 @@ audio.addEventListener("ended", () => {
 });
 </script>
 
-<div>
 
-<audio id="myAudio" >
-  <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
-</audio>
-
-<script>
-const audio = document.getElementById("myAudio");
-let count = 0;
-const maxPlays = 2;
-let hasPlayed = false;
-
-
-document.addEventListener("click", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
-});
-
-// Loop max 2 times
-audio.addEventListener("ended", () => {
-  count++;
-  if (count < maxPlays) {
-    audio.currentTime = 0;
-    audio.play();
-  }
-});
-      
-</script>
-        
-
-</div>
         
 
          <!-- Audio_section End    -->
