@@ -417,53 +417,25 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
-    
-<audio id="audio">
+<audio id="audio" autoplay muted>
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
 <script>
 const audio = document.getElementById("audio");
-let count = 0;
-const maxPlays = 2;
-let hasPlayed = false;
 
-// Play on first scroll
-window.addEventListener("scroll", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
+// Try autoplay on load (works because muted)
+window.addEventListener("load", () => {
+  audio.play().catch(() => {
+    console.log("Autoplay blocked");
+  });
 });
 
-// Loop max 2 times
-audio.addEventListener("ended", () => {
-  count++;
-  if (count < maxPlays) {
-    audio.currentTime = 0;
-    audio.play();
-  }
-});
-</script>
-
-</body>
-</html>
-
-// Play on first Click
-      
-<script>
+// Unmute after first interaction
 document.addEventListener("click", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
-});
+  audio.muted = false;
+  audio.play();
+}, { once: true });
 </script>
 
 
