@@ -418,61 +418,37 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
-        
-<audio id="audio" preload="auto">
+    
+
+<audio id="audio" muted>
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
 <script>
 const audio = document.getElementById("audio");
-
-let hasPlayed = false;
-let count = 0;
+let playCount = 0;
 const maxPlays = 2;
 
-/* -------------------------
-   Play function (safe)
---------------------------*/
-function playAudio() {
-  audio.play().then(() => {
-    hasPlayed = true;
-    console.log("Audio started");
-  }).catch(() => {
-    console.log("Playback blocked");
-  });
+function enableSoundAndPlay() {
+  audio.muted = false;
+
+  audio.play()
+    .then(() => {
+      window.removeEventListener("scroll", enableSoundAndPlay);
+      window.removeEventListener("click", enableSoundAndPlay);
+    })
+    .catch(err => {
+      console.log("Playback blocked:", err);
+    });
 }
 
-/* -------------------------
-   Scroll trigger (0.5%)
---------------------------*/
-function handleScroll() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
+// Better UX: both scroll + click
+window.addEventListener("scroll", enableSoundAndPlay, { once: true });
+window.addEventListener("click", enableSoundAndPlay, { once: true });
 
-  if (!hasPlayed && scrollPercent >= 0.5) {
-    playAudio();
-    window.removeEventListener("scroll", handleScroll);
-  }
-}
-
-window.addEventListener("scroll", handleScroll);
-
-/* -------------------------
-   Click anywhere trigger
---------------------------*/
-document.addEventListener("click", () => {
-  if (!hasPlayed) {
-    playAudio();
-  }
-}, { once: true });
-
-/* -------------------------
-   Loop max 2 times
---------------------------*/
 audio.addEventListener("ended", () => {
-  count++;
-  if (count < maxPlays) {
+  playCount++;
+  if (playCount < maxPlays) {
     audio.currentTime = 0;
     audio.play();
   }
