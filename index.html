@@ -9,17 +9,6 @@
     <!-- <link rel="icon" type="Project_1st_elements/ico" href="favIcon.ico"> -->
     <link rel="icon" type="image/PNG" href="./Project_1st_elements/favIcon.png">
 
-  <script>
-        window.addEventListener("load", () => {
-        const audio = document.getElementById("audio");
-                
-        audio.play().then(() => {
-        audio.muted = false; // try to unmute
-         }).catch(() => {
-         console.log("Autoplay blocked or file issue");
-         });
-         });
-      </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -430,10 +419,10 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
         <div>
-            <audio id="audio" autoplay unmuted>
-                  <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.mp3" type="audio/mpeg">
-                </audio>
-                
+            <audio autoplay unmuted>
+              <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
                 
         </div>
 
