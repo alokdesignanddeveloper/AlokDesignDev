@@ -423,18 +423,6 @@ body {
 <audio id="audio" autoplay unmuted >
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
-
-<script>
-document.addEventListener("click", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
-});
-</script>
         
 <script>
 const audio = document.getElementById("audio");
@@ -463,7 +451,42 @@ audio.addEventListener("ended", () => {
 });
 </script>
 
+<div>
 
+<audio id="myAudio" >
+  <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("myAudio");
+let count = 0;
+const maxPlays = 2;
+let hasPlayed = false;
+
+
+document.addEventListener("click", () => {
+  if (!hasPlayed) {
+    audio.play().then(() => {
+      hasPlayed = true;
+    }).catch(() => {
+      console.log("Playback blocked");
+    });
+  }
+});
+
+// Loop max 2 times
+audio.addEventListener("ended", () => {
+  count++;
+  if (count < maxPlays) {
+    audio.currentTime = 0;
+    audio.play();
+  }
+});
+      
+</script>
+        
+
+</div>
         
 
          <!-- Audio_section End    -->
