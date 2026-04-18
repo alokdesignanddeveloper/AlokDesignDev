@@ -425,49 +425,45 @@ body {
 </audio>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const audio = document.getElementById("audio");
+const overlay = document.getElementById("overlay");
 
-  const audio = document.getElementById("audio");
-  let playCount = 0;
-  const maxPlays = 2;
+let playCount = 0;
+const maxPlays = 2;
 
-  function startAudio() {
-    audio.muted = false;
+function startExperience() {
 
-    const playPromise = audio.play();
+  overlay.style.display = "none";
 
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          console.log("Audio started successfully");
-        })
-        .catch(err => {
-          console.log("Playback blocked or failed:", err);
-        });
-    }
+  audio.muted = false;
 
-    // Remove listeners after first trigger
-    document.removeEventListener("click", startAudio);
-    document.removeEventListener("touchstart", startAudio);
+  audio.play()
+    .then(() => {
+      console.log("Audio started");
+    })
+    .catch(err => {
+      console.log("Blocked:", err);
+    });
+
+  // remove listener after first use
+  overlay.removeEventListener("click", startExperience);
+}
+
+// ✅ ONLY RELIABLE TRIGGER
+overlay.addEventListener("click", startExperience);
+
+// 🔁 loop 2 times
+audio.addEventListener("ended", () => {
+  playCount++;
+
+  if (playCount < maxPlays) {
+    audio.currentTime = 0;
+    audio.play().catch(err => {
+      console.log("Loop blocked:", err);
+    });
   }
-
-  // ✅ Reliable triggers (user gesture only)
-  document.addEventListener("click", startAudio, { once: true });
-  document.addEventListener("touchstart", startAudio, { once: true });
-
-  // 🔁 Loop max 2 times
-  audio.addEventListener("ended", () => {
-    playCount++;
-
-    if (playCount < maxPlays) {
-      audio.currentTime = 0;
-      audio.play().catch(err => {
-        console.log("Loop play blocked:", err);
-      });
-    }
-  });
-
 });
+
 </script>
 
         
