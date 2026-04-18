@@ -479,18 +479,19 @@ let hasPlayed = false;
 let count = 0;
 const maxPlays = 2;
 
-// Trigger when user scrolls 10px
 function handleScroll() {
-  if (!hasPlayed && window.scrollY > 10) {
-    
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  if (!hasPlayed && scrollPercent >= 10) {
     audio.play().then(() => {
       hasPlayed = true;
-      console.log("Audio started");
+      console.log("Audio started at 10%");
     }).catch(() => {
       console.log("Playback blocked");
     });
 
-    // stop listening after trigger
     window.removeEventListener("scroll", handleScroll);
   }
 }
