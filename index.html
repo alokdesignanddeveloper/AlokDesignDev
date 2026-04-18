@@ -450,6 +450,18 @@ audio.addEventListener("ended", () => {
   }
 });
 </script>
+
+<script>
+document.addEventListener("click", () => {
+  if (!hasPlayed) {
+    audio.play().then(() => {
+      hasPlayed = true;
+    }).catch(() => {
+      console.log("Playback blocked");
+    });
+  }
+});
+</script>
         
 
          <!-- Audio_section End    -->
