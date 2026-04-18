@@ -10,15 +10,23 @@
     <link rel="icon" type="image/PNG" href="./Project_1st_elements/favIcon.png">
 
     <script>
-  window.addEventListener('load', function () {
-    const audio = document.getElementById('audio');
+  const audio = document.getElementById("audio");
+  let count = 0;
+  const maxPlays = 3;
 
-    // Try to unmute and play
-    audio.muted = false;
-
+  window.addEventListener("load", () => {
     audio.play().catch(() => {
-      console.log("Autoplay blocked by browser");
+      console.log("Autoplay blocked");
     });
+  });
+
+  audio.addEventListener("ended", () => {
+    count++;
+
+    if (count < maxPlays) {
+      audio.currentTime = 0; // rewind
+      audio.play();
+    }
   });
 </script>
     
@@ -430,14 +438,11 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
-        <div>
 
             <audio id="audio" autoplay muted>
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
-                
-        </div>
 
          <!-- Audio_section End    -->
 
