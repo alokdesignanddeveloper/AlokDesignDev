@@ -419,10 +419,25 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
         <div>
-            <audio autoplay unmuted>
-              <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+
+            <audio id="audio" autoplay muted>
+  <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener('load', function () {
+    const audio = document.getElementById('audio');
+
+    // Try to unmute and play
+    audio.muted = false;
+
+    audio.play().catch(() => {
+      console.log("Autoplay blocked by browser");
+    });
+  });
+</script>
+
+        
                 
         </div>
 
