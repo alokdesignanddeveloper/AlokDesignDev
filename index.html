@@ -430,41 +430,46 @@ let hasPlayed = false;
 let count = 0;
 const maxPlays = 2;
 
+/* -------------------------
+   Play function (safe)
+--------------------------*/
+function playAudio() {
+  audio.play().then(() => {
+    hasPlayed = true;
+    console.log("Audio started");
+  }).catch(() => {
+    console.log("Playback blocked");
+  });
+}
+
+/* -------------------------
+   Scroll trigger (0.5%)
+--------------------------*/
 function handleScroll() {
   const scrollTop = window.scrollY;
-
-  // 100vh-based scroll height reference
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-
   const scrollPercent = (scrollTop / docHeight) * 100;
 
-  // 0.5% trigger
   if (!hasPlayed && scrollPercent >= 0.5) {
     playAudio();
     window.removeEventListener("scroll", handleScroll);
   }
 }
 
-function playAudio() {
-  audio.play().then(() => {
-    hasPlayed = true;
-    console.log("Audio started at 0.5% scroll");
-  }).catch(() => {
-    console.log("Playback blocked");
-  });
-}
-
-// Scroll listener
 window.addEventListener("scroll", handleScroll);
 
-// Fallback (important for mobile/autoplay rules)
+/* -------------------------
+   Click anywhere trigger
+--------------------------*/
 document.addEventListener("click", () => {
   if (!hasPlayed) {
     playAudio();
   }
 }, { once: true });
 
-// Loop max 2 times
+/* -------------------------
+   Loop max 2 times
+--------------------------*/
 audio.addEventListener("ended", () => {
   count++;
   if (count < maxPlays) {
