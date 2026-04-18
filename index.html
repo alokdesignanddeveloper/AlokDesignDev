@@ -424,30 +424,56 @@ body {
 
 <script>
 const audio = document.getElementById("audio");
+let hasStarted = false;
 
-/* 
-  1. Try autoplay (works because muted)
-  2. Then enable sound on first interaction
-*/
-
-// Auto play on load (silent)
+/* =========================
+   1. Autoplay on load (muted)
+========================= */
 window.addEventListener("load", () => {
   audio.play().catch(() => {
-    console.log("Autoplay blocked");
+    console.log("Autoplay blocked (normal on mobile)");
   });
 });
 
-// Works for BOTH mobile touch + desktop click
-function enableSound() {
-  audio.muted = false;
-  audio.play().catch(() => {
-    console.log("Play failed");
-  });
+
+/* =========================
+   2. Start sound on click (BEST & REQUIRED)
+========================= */
+function startAudio() {
+  if (!hasStarted) {
+    hasStarted = true;
+    audio.muted = false;
+    audio.play().catch(() => {
+      console.log("Play blocked");
+    });
+  }
 }
 
-// First interaction enables sound
-document.addEventListener("click", enableSound, { once: true });
-document.addEventListener("touchstart", enableSound, { once: true });
+document.addEventListener("click", startAudio, { once: true });
+document.addEventListener("touchstart", startAudio, { once: true });
+
+
+/* =========================
+   3. Optional scroll trigger (NOT reliable)
+========================= */
+window.addEventListener("scroll", () => {
+  startAudio();
+});
+
+
+/* =========================
+   4. Loop max 2 times
+========================= */
+let count = 0;
+const maxPlays = 2;
+
+audio.addEventListener("ended", () => {
+  count++;
+  if (count < maxPlays) {
+    audio.currentTime = 0;
+    audio.play();
+  }
+});
 </script>
 
          <!-- Audio_section End    -->
