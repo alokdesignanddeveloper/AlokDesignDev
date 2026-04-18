@@ -417,27 +417,21 @@ body {
 
         <!-- AutoPlay Audio_section Start   -->
 
-<audio id="audio" autoplay muted>
+
+<audio id="audio">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
 <script>
 const audio = document.getElementById("audio");
 
-// Try autoplay on load (works because muted)
+// Try to play when page loads
 window.addEventListener("load", () => {
   audio.play().catch(() => {
-    console.log("Autoplay blocked");
+    console.log("Blocked by browser autoplay policy");
   });
 });
-
-// Unmute after first interaction
-document.addEventListener("click", () => {
-  audio.muted = false;
-  audio.play();
-}, { once: true });
 </script>
-
 
          <!-- Audio_section End    -->
 
