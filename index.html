@@ -425,6 +425,18 @@ body {
 </audio>
 
 <script>
+document.addEventListener("click", () => {
+  if (!hasPlayed) {
+    audio.play().then(() => {
+      hasPlayed = true;
+    }).catch(() => {
+      console.log("Playback blocked");
+    });
+  }
+});
+</script>
+        
+<script>
 const audio = document.getElementById("audio");
 let count = 0;
 const maxPlays = 2;
@@ -451,17 +463,7 @@ audio.addEventListener("ended", () => {
 });
 </script>
 
-<script>
-document.addEventListener("click", () => {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
-});
-</script>
+
         
 
          <!-- Audio_section End    -->
