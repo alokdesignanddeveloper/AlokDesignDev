@@ -10,6 +10,18 @@
     <link rel="icon" type="image/PNG" href="./Project_1st_elements/favIcon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        window.addEventListener("load", () => {
+        const audio = document.getElementById("audio");
+                
+        audio.play().then(() => {
+        audio.muted = false; // try to unmute
+         }).catch(() => {
+         console.log("Autoplay blocked or file issue");
+         });
+         });
+      </script>
 
     <Style>
         * {
@@ -416,21 +428,11 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
         <div>
-            <audio id="audio" autoplay unmuted>
+            <audio id="audio" autoplay muted>
                   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.mp3" type="audio/mpeg">
                 </audio>
                 
-                <script>
-                  window.addEventListener("load", () => {
-                    const audio = document.getElementById("audio");
                 
-                    audio.play().then(() => {
-                      audio.muted = false; // try to unmute
-                    }).catch(() => {
-                      console.log("Autoplay blocked or file issue");
-                    });
-                  });
-                </script>
         </div>
 
          <!-- Audio_section End    -->
