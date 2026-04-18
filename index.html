@@ -419,8 +419,7 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
         
-
-<audio id="audio" autoplay unmuted>
+<audio id="audio" preload="auto">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
@@ -433,22 +432,37 @@ const maxPlays = 2;
 
 function handleScroll() {
   const scrollTop = window.scrollY;
+
+  // 100vh-based scroll height reference
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
   const scrollPercent = (scrollTop / docHeight) * 100;
 
-  if (!hasPlayed && scrollPercent >= 0.01) {
-    audio.play().then(() => {
-      hasPlayed = true;
-      console.log("Audio started at 0.01%");
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-
+  // 0.5% trigger
+  if (!hasPlayed && scrollPercent >= 0.5) {
+    playAudio();
     window.removeEventListener("scroll", handleScroll);
   }
 }
 
+function playAudio() {
+  audio.play().then(() => {
+    hasPlayed = true;
+    console.log("Audio started at 0.5% scroll");
+  }).catch(() => {
+    console.log("Playback blocked");
+  });
+}
+
+// Scroll listener
 window.addEventListener("scroll", handleScroll);
+
+// Fallback (important for mobile/autoplay rules)
+document.addEventListener("click", () => {
+  if (!hasPlayed) {
+    playAudio();
+  }
+}, { once: true });
 
 // Loop max 2 times
 audio.addEventListener("ended", () => {
