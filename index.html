@@ -419,47 +419,49 @@ body {
 
  <div>
 
+
 <audio id="audio">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
 <script>
 const audio = document.getElementById("audio");
-let count = 0;
-const maxPlays = 2;
-let started = false;
 
+let started = false;
+let playCount = 0;
+const maxPlays = 3;
+
+// 🔥 Unified start function
 function startAudio() {
   if (started) return;
 
   audio.play()
     .then(() => {
       started = true;
+      console.log("Audio started");
     })
     .catch(err => {
       console.log("Playback blocked:", err);
     });
 }
 
-// Better scroll detection (only triggers after real scrolling)
-function handleScroll() {
-  if (window.scrollY > 50) {   // user actually scrolled
-    startAudio();
-    window.removeEventListener("scroll", handleScroll);
-  }
-}
-
-window.addEventListener("scroll", handleScroll);
-
-// Click always works better than scroll on mobile
+// 👇 First interaction triggers audio
 window.addEventListener("click", startAudio, { once: true });
+window.addEventListener("touchstart", startAudio, { once: true });
 
-// Loop max 3 times
+window.addEventListener("scroll", () => {
+  startAudio();
+}, { once: true });
+
+// 🔁 Loop audio max 3 times
 audio.addEventListener("ended", () => {
-  count++;
-  if (count < maxPlays) {
+  playCount++;
+
+  if (playCount < maxPlays) {
     audio.currentTime = 0;
-    audio.play();
+    audio.play().catch(err => {
+      console.log("Replay blocked:", err);
+    });
   }
 });
 </script>
