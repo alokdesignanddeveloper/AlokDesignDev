@@ -8,6 +8,33 @@
     
     <!-- <link rel="icon" type="Project_1st_elements/ico" href="favIcon.ico"> -->
     <link rel="icon" type="image/PNG" href="./Project_1st_elements/favIcon.png">
+
+    <script>
+const audio = document.getElementById("audio");
+let count = 0;
+const maxPlays = 3;
+let hasPlayed = false;
+
+// Play on first scroll
+window.addEventListener("scroll", () => {
+  if (!hasPlayed) {
+    audio.play().then(() => {
+      hasPlayed = true;
+    }).catch(() => {
+      console.log("Playback blocked");
+    });
+  }
+});
+
+// Loop max 3 times
+audio.addEventListener("ended", () => {
+  count++;
+  if (count < maxPlays) {
+    audio.currentTime = 0;
+    audio.play();
+  }
+});
+</script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -417,40 +444,10 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
         
+    
 <audio id="audio">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
-
-<script>
-const audio = document.getElementById("audio");
-let count = 0;
-const maxPlays = 3;
-let triggered = false;
-
-function startAudio() {
-  if (triggered) return;
-
-  audio.play().then(() => {
-    triggered = true;
-  }).catch(() => {
-    console.log("Still blocked");
-  });
-}
-
-window.addEventListener("scroll", startAudio);
-document.addEventListener("click", startAudio);
-
-// Loop max 3 times
-audio.addEventListener("ended", () => {
-  count++;
-  if (count < maxPlays) {
-    audio.currentTime = 0;
-    audio.play();
-  }
-});
-</script>
-
-      
 
          <!-- Audio_section End    -->
 
