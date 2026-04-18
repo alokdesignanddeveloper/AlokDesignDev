@@ -419,55 +419,18 @@ body {
         <!-- AutoPlay Audio_section Start   -->
 
 
-
-<audio id="audio" unmute >
+<audio id="audio" unmute>
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
 
 <script>
 const audio = document.getElementById("audio");
 
-let count = 0;
-const maxPlays = 2;
-let hasPlayed = false;
-
-/* =========================
-   Unified play function
-========================= */
-function tryPlayAudio() {
-  if (!hasPlayed) {
-    audio.play().then(() => {
-      hasPlayed = true;
-    }).catch(() => {
-      console.log("Playback blocked");
-    });
-  }
-}
-
-/* =========================
-   1. Play on scroll
-========================= */
-window.addEventListener("scroll", tryPlayAudio);
-
-/* =========================
-   2. Play on click (NEW)
-========================= */
-document.addEventListener("click", tryPlayAudio, { once: true });
-
-/* =========================
-   3. Play on touch (mobile)
-========================= */
-document.addEventListener("touchstart", tryPlayAudio, { once: true });
-
-/* =========================
-   4. Loop max 2 times
-========================= */
-audio.addEventListener("ended", () => {
-  count++;
-  if (count < maxPlays) {
-    audio.currentTime = 0;
-    audio.play();
-  }
+// Try to play when page loads
+window.addEventListener("load", () => {
+  audio.play().catch(() => {
+    console.log("Blocked by browser autoplay policy");
+  });
 });
 </script>
         
