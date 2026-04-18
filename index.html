@@ -468,6 +468,8 @@ body {
 
 
     
+<div>
+
 <audio id="audio" preload="auto">
   <source src="./Project_1st_elements/AlokDesignStore_Intro_Video.MP3" type="audio/mpeg">
 </audio>
@@ -484,10 +486,10 @@ function handleScroll() {
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrollPercent = (scrollTop / docHeight) * 100;
 
-  if (!hasPlayed && scrollPercent >= 10) {
+  if (!hasPlayed && scrollPercent >= 0.5) {
     audio.play().then(() => {
       hasPlayed = true;
-      console.log("Audio started at 10%");
+      console.log("Audio started at 0.5%");
     }).catch(() => {
       console.log("Playback blocked");
     });
@@ -507,6 +509,8 @@ audio.addEventListener("ended", () => {
   }
 });
 </script>
+          
+</div>
 
 
         
